@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Market Orders</title>
+</head>
+<body>
+    <h1>All Market Orders</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Stock Symbol</th>
+                <th>Quantity</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="order : ${marketOrders}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.stockSymbol}"></td>
+                <td th:text="${order.quantity}"></td>
+                <td th:text="${order.orderStatus}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <a th:href="@{/market-orders/new}">Place New Market Order</a>
+</body>
+</html>

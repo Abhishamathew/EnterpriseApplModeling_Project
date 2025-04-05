@@ -4,12 +4,18 @@
     <title>Place Order</title>
 </head>
 <body>
-<h2>Place a Stock Order</h2>
-<form th:action="@{/orders}" method="post" th:object="${order}">
-    User ID: <input type="text" th:field="*{userId}"/><br>
-    Stock Symbol: <input type="text" th:field="*{stockSymbol}"/><br>
-    Quantity: <input type="number" th:field="*{quantity}"/><br>
-    <button type="submit">Submit Order</button>
-</form>
+    <h2>Place a Stock Order</h2>
+    <form th:action="@{/order/place}" method="post" th:object="${order}">
+        <label>User ID:</label>
+        <input type="text" th:field="*{userId}" /><br><br>
+
+        <label>Stock Symbol:</label>
+        <input type="text" th:field="*{stockSymbol}" /><br><br>
+
+        <label>Quantity:</label>
+        <input type="number" th:field="*{quantity}" /><br><br>
+
+        <button type="submit">Submit Order</button>
+    </form>
 </body>
 </html>
